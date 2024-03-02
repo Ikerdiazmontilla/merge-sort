@@ -14,11 +14,11 @@ const mergeSort = function (array) {
 
   while (lArray.length > 0 || rArray.length > 0) {
     if (rArray.length === 0) {
-      for (item of lArray) {
+      for (let i = 0; i < lArray.length; i += 1) {
         sortedArray.push(lArray.shift());
       }
-    } else if (rArray.length === 0) {
-      for (item of rArray) {
+    } else if (lArray.length === 0) {
+      for (let i = 0; i < rArray.length; i += 1) {
         sortedArray.push(rArray.shift());
       }
     } else if (lArray[0] < rArray[0]) {
@@ -30,5 +30,5 @@ const mergeSort = function (array) {
   return sortedArray;
 };
 
-const arr = [105, 79, 100, 110];
+const arr = [105, 79, 100, 110]
 console.log(mergeSort(arr));
